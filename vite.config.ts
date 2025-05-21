@@ -3,11 +3,17 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   server: {
-    open: true, // 自動でブラウザを開く
-    port: 3000, // ここでポート番号を指定します
+    open: true,
+    port: 3000,
+    proxy: {
+      "/api": {
+        target: "http://localhost:7071", // API サーバーの URL
+        changeOrigin: true,
+      },
+    },
   },
   build: {
-    outDir: "build", // ビルドの出力先ディレクトリ
+    outDir: "build",
   },
   plugins: [react()],
 });

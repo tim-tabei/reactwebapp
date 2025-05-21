@@ -1,10 +1,15 @@
 body {
   background-color: #301934;
 }
+
 h1 {
+  font-size: 80px;
   color: #ffff55;
-  text-shadow: 1px 1px 2px red;
+  -webkit-text-stroke: 10px #f00;
+  paint-order: stroke;
+  transform: rotate(-1deg) scaleY(0.7);
 }
+
 p {
   color: #ffffff;
 }

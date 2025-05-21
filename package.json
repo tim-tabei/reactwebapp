@@ -12,7 +12,9 @@
     "react-dom": "^19.1.0"
   },
   "scripts": {
-    "start": "vite",
+    "dev": "concurrently \"vite\" \"npm run api\"",
+    "api": "cd api && npm start",
+    "start": "swa start build --api-location api",
     "build": "tsc --noEmit && vite build",
     "serve": "vite preview",
     "test": "jest"
